@@ -1,0 +1,4 @@
+naki.dev
+reverse_proxy http://localhost:3000 {
+	header_up Host {http.reverse_proxy.upstream.hostport}
+}
