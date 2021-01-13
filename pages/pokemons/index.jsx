@@ -18,7 +18,7 @@ export default class Home extends react.Component {
         console.dir({data: data})
         this.setState({
             ...this.state,
-            items: data
+            items: data 
         })
     }
     
