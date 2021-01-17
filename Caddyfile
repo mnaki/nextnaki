@@ -1,5 +1,8 @@
-naki.dev
-reverse_proxy :3000
-log {
-	level PANIC
+naki.dev {
+    reverse_proxy * localhost:3000 {
+    }
+	tls internal
+	log {
+		level WARN
+	}
 }
