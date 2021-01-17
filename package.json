@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
+    "dev:reload": "caddy reload",
     "dev:stop": "caddy stop",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
