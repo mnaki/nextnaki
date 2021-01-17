@@ -1,3 +1,5 @@
+# Pokédex
+
 ## Requirements
 
 - Caddy
@@ -10,7 +12,5 @@
 
 ```sh
 npm install
-
-caddy run
 npm run dev
 ```
