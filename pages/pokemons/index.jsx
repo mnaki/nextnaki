@@ -39,34 +39,40 @@ export default function Spookymons() {
 
 
     return <>
-        <div>
-            {/* <pre>{JSON.stringify(pokemonData, false, 2)}</pre> */}
-            <Head>
-                <title>Spookymons!</title>
-            </Head>
-            <h1>Pokemon list</h1>
-            {pokemonUrlList && pokemonUrlList.map(pokemon => <div key={pokemon.name}>
-                <h2>{pokemon.name}</h2>
-                <h3>{pokemon.url}</h3>
-                <div><img src={pokemonData[pokemon.url] && pokemonData[pokemon.url].sprites.front_default} alt="" /></div>
-            </div>)}
-        </div>
+        <Head>
+            <title>Spookymons!</title>
+        </Head>
+        <h1>Pokemon list</h1>
+        {pokemonUrlList && pokemonUrlList.map(pokemon => (
+            <figure key={pokemon.name} className={""}>
+
+                <img className={""} src={pokemonData[pokemon.url] && pokemonData[pokemon.url].sprites.front_default} alt={pokemon.name} title={pokemon.name}></img>
+
+                <div className={""}>
+
+                    <blockquote>
+                        <p className={"text-lg font-semibold"}>
+                            “Tailwind CSS is the only framework that I've seen scale
+                            on large teams. It’s easy to customize, adapts to any design,
+                            and the build size is tiny.”
+                        </p>
+                    </blockquote>
+
+                    <figcaption className={"font-medium"}>
+
+                        <div className={"text-cyan-600"}>
+                            {pokemon.name}
+                        </div>
+
+                        <div className={"text-gray-500"}>
+                            <a href={pokemon.url}>{pokemon.url}</a>
+                        </div>
+
+                    </figcaption>
+
+                </div>
+
+            </figure>
+        ))}
     </>
 }
-
-// const getPokemonData = ({ pokemonUrl }) => {
-//     const [pokemonData, setPokemonData] = useState({});
-
-//     useEffect(() => {
-//         fetch(pokemonUrl).then(fetched => {
-//             fetched.json().then(data => {
-//                 console.table(data.results.slice(0, 4))
-//                 setPokemonData(data.results)
-//             })
-//         })
-//     }, [])
-
-//     return <>
-//         <pre>{JSON.stringify(pokemonData, false, 2)}</pre>
-//     </>
-// }
