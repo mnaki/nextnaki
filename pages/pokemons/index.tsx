@@ -8,7 +8,7 @@ process.env.ENVIORONNEMENT = 'STAIGNG'
 
 export default function Spookymons() {
     const [pokemonWithUrls, setPokemonWithUrls]: [Array<any>, React.Dispatch<any>] = useState([]);
-    const [pokemonData, setPokemonData]: [Array<{}>, React.Dispatch<any>] = useState([]);
+    const [pokemonData, setPokemonData]: [Object, React.Dispatch<any>] = useState([]);
 
     const addPokemonData = (newData) => {
         return setPokemonData(pokemonData => ({ ...pokemonData, ...newData }));
@@ -52,7 +52,7 @@ export default function Spookymons() {
             {
                 pokemonWithUrls.map(
                     (pokemonWithUrl) => (pokemonData[pokemonWithUrl.url])
-                ).map((pokemonData as any), <Pokemon pokemonWithUrls={pokemonWithUrls} pokemonData={pokemonData}></Pokemon>)
+                        .map((pokemonData) => <Pokemon pokemonWithUrls={pokemonWithUrl.url} pokemonData={pokemonData}></Pokemon>))
             }
         </div>
     </>)
@@ -115,7 +115,7 @@ const pokemonCard = ({ data }) => {
                                                                                             </p>
                 </div>
             </div>
-            <div className="space-y-2">
+            {/* <div className="space-y-2">
                 <div className="bg-gray-200 dark:bg-black rounded-full overflow-hidden">
                     <div className="bg-lime-500 dark:bg-lime-400 w-1/2 h-1.5" role="progressbar"></div>
                 </div>
@@ -164,6 +164,6 @@ const pokemonCard = ({ data }) => {
             </button>
             <button type="button" className="mx-auto border border-gray-300 rounded-md text-sm font-medium py-0.5 px-2 text-gray-500 dark:border-gray-600 dark:text-gray-400">
                 1.0x
-                                                                                            </button>
+                                                                                            </button> */}
         </div></>)
 }
