@@ -4,12 +4,18 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
-            "type": "pwa-chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
+            "debugServer": 4711,
             "url": "http://localhost:3000",
-            "webRoot": "${workspaceFolder}"
+            "webRoot": "${workspaceFolder}",
+            "port": 9222,
+            "preLaunchTask": {
+                "task": "%{chrome} ${file}",
+                "type": "${defaultBuildTask}"
+            }
         }
     ]
 }

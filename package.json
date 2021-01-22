@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "su -c 'caddy stop ; caddy start' && next dev ; wait",
+    "dev": "caddy validate && next dev && caddy stop ; caddy start ; caddy reload",
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",

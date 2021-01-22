@@ -3,5 +3,5 @@ naki.dev {
 		level ERROR
 	}
 	tls  naki_dev.crt naki_dev.key
-	reverse_proxy pokemeon.naki.dev :3000
+	reverse_proxy naki.dev localhost:3000
 }
