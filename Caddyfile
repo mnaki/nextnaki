@@ -1,7 +1,4 @@
 naki.dev {
-	log {
-		level ERROR
-	}
-	tls  naki_dev.crt naki_dev.key
+	tls naki_dev.crt naki_dev.key
 	reverse_proxy naki.dev localhost:3000
 }
