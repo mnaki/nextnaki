@@ -13,7 +13,6 @@ import Cors from 'cors'
 // )
 
 function MyApp({ Component, pageProps }) {
-    await cors(req, res)
     return <Component {...pageProps} />
 }
 
