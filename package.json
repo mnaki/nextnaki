@@ -17,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.2.1",
+    "axios": "^0.21.1",
     "bluebird": "^3.7.2",
     "cors": "^2.8.5",
     "next": "^10.0.5",
@@ -27,8 +28,11 @@
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.33",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",
+    "tailwindcss": "^2.0.2",
+    "tailwindcss-prefers-color-scheme": "^0.1.0",
     "typescript": "^4.1.3"
   }
 }
