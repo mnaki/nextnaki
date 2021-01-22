@@ -6,7 +6,7 @@ import { useEffect, useState, useMemo, Fragment } from 'react';
 
 process.env.ENVIORONNEMENT = 'STAIGNG'
 
-export default function Spookymons() {
+export default async function Spookymons() {
     const [pokemonWithUrls, setPokemonWithUrls]: [Array<any>, React.Dispatch<any>] = useState([]);
     const [pokemonData, setPokemonData]: [Object, React.Dispatch<any>] = useState([]);
 
@@ -49,22 +49,24 @@ export default function Spookymons() {
         <div>
             <title>Spookymons!</title>
             <h1>Pokemon list</h1>
-            {
-                pokemonWithUrls.map(
-                    (pokemonWithUrl) => (pokemonData[pokemonWithUrl.url])
-                        .map((pokemonData) => <Pokemon pokemonWithUrls={pokemonWithUrl.url} pokemonData={pokemonData}></Pokemon>))
-            }
+            <div>
+                {(pokemonWithUrls.map(pokemonWithUrl => (
+                    // <Pokemon pokemonWithUrl={pokemonWithUrl} pokemonUrl={pokemonWithUrl.url} pokemonData={pokemonData}></Pokemon>
+                    <Pokemon pokemonData={pokemonData} pokemonWithUrl={pokemonWithUrl} pokemonUrl={pokemonWithUrl.url} ></Pokemon>
+                ))
+                )}
+            </div>
         </div>
     </>)
 }
 
-const Pokemon = ({ pokemonData, pokemonWithUrls }) => {
+const Pokemon = ({ pokemonData, pokemonWithUrl, pokemonUrl }) => {
 
-    return <figure key={pokemonWithUrls.url} className={""}>
+    return <figure key={pokemonWithUrl.url} className={""}>
 
         <div className="backvoer">
-            <img className={""} src={pokemonData[pokemonWithUrls.url] && pokemonData[pokemonWithUrls.url].sprites.front_default} alt={pokemonWithUrls.name} title={pokemonWithUrls.name}></ img>
-            <img className={""} src={pokemonData[pokemonWithUrls.url] && pokemonData[pokemonWithUrls.url].sprites.front_default} alt={pokemonWithUrls.name} title={pokemonWithUrls.name}></img>
+            <img className={""} src={pokemonData[pokemonUrl] && pokemonData[pokemonUrl].sprites.front_default} alt={pokemonWithUrl.name} title={pokemonWithUrl.name}></ img>
+            <img className={""} src={pokemonData[pokemonUrl] && pokemonData[pokemonUrl].sprites.front_default} alt={pokemonWithUrl.name} title={pokemonWithUrl.name}></img>
         </div>
 
         <div className={""}>
@@ -80,11 +82,11 @@ const Pokemon = ({ pokemonData, pokemonWithUrls }) => {
             <figcaption className={"font-medium"}>
 
                 <div className={"text-cyan-600"}>
-                    {pokemonWithUrls.name}
+                    {pokemonWithUrl.name}
                 </div>
 
                 <div className={"text-gray-500"}>
-                    <a href={pokemonWithUrls.url}>{pokemonWithUrls.url}</a>
+                    <a href={pokemonUrl}>{pokemonUrl}</a>
                 </div>
 
             </figcaption>
