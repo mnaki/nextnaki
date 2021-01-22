@@ -36,3 +36,8 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 .next
+naki_dev.p7b
+naki_dev.csr
+naki_dev.key
+naki_dev.crt
+naki_dev.ca-bundle
