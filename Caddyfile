@@ -1,4 +1,4 @@
-naki.dev {
+pokemon.naki.dev {
     reverse_proxy * localhost:3000 {
     }
 	tls internal
