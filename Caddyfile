@@ -1,19 +1,7 @@
-pokemon.naki.dev {
-	reverse_proxy * :3000 {
-		to http.reverse_proxy.transport.https
-		transport http {
-			tls
-		}
-	}
-	tls naki_dev.crt naki_dev.key
-	log {
-		level WARN
-	}
-}
-
 naki.dev {
-	tls naki_dev.crt naki_dev.key
 	log {
-		level WARN
+		level ERROR
 	}
+	tls  naki_dev.crt naki_dev.key
+	reverse_proxy pokemeon.naki.dev :3000
 }
