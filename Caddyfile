@@ -1,7 +1,7 @@
-naki.dev {
+pokemon.naki.dev {
     reverse_proxy * localhost:3000 {
     }
-	tls internal
+	tls naki_dev.crt naki_dev.key
 	log {
 		level WARN
 	}
